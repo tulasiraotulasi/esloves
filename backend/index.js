@@ -21,8 +21,8 @@ app.get("/classes", (request, response) => {
   });
 });
 
-const filePath = 'C:/Users/Tulasi Rao/Desktop/chapter 1.pdf';
-const fileName = 'chapter 1.pdf';
+// const filePath = 'C:/Users/Tulasi Rao/Desktop/chapter 1.pdf';
+// const fileName = 'chapter 1.pdf';
 // app.get("/:interest", (request, response) => {
 //   const { interest } = request.params;
 //   client.query(
@@ -39,22 +39,22 @@ const fileName = 'chapter 1.pdf';
 //   );
 // });
 
-app.post("/updatingData", async (request, response) => {
-  fs.readFile(filePath, (err, data) => {
-    if (err) throw err;
+// app.post("/updatingData", async (request, response) => {
+//   fs.readFile(filePath, (err, data) => {
+//     if (err) throw err;
   
-    const query = `INSERT INTO chapters VALUES ("chapter 1",1,${data} )`;
-    client.query(query, (err, res) => {
-      if (err) {
-        console.error(err);
-      } else {
-        // console.log('PDF uploaded successfully');
-        response.send("PDF uploaded successfully");
-      }
-      client.end();
-    });
-  });
-});
+//     const query = `INSERT INTO chapters VALUES ("chapter 1",1,${data} )`;
+//     client.query(query, (err, res) => {
+//       if (err) {
+//         console.error(err);
+//       } else {
+//         // console.log('PDF uploaded successfully');
+//         response.send("PDF uploaded successfully");
+//       }
+//       client.end();
+//     });
+//   });
+// });
 
 app.listen(5000, () => {
   console.log(`Server Running at 5000`);
